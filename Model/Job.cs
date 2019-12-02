@@ -25,7 +25,7 @@ namespace Model
             }
         }
 
-        static void ResetNames()
+        public static void ResetNames()
         {
             namer = 'A';
         }
