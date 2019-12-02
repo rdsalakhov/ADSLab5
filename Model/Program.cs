@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -6,16 +7,17 @@ namespace Model
     {
         public static void Main(string[] args)
         {
-            var list = new List<Job>();
-            list.Add(new Job(6, 5));
-            list.Add(new Job(4, 2));
-            list.Add(new Job(6, 3));
-            list.Add(new Job(5, 6));
-            list.Add(new Job(7, 6));
-            list.Add(new Job(1, 1));
-            list.Add(new Job(4, 7));
+            var list = new List<Tuple<int, int>>();
+            list.Add(new Tuple<int, int>(7, 8));
+            list.Add(new Tuple<int, int>(4, 4));
+            list.Add(new Tuple<int, int>(2, 1));
+            list.Add(new Tuple<int, int>(5, 7));
+            list.Add(new Tuple<int, int>(2, 3));
+            list.Add(new Tuple<int, int>(6, 5));
+            list.Add(new Tuple<int, int>(5, 4));
+
             
-            list.Sort(new JobComparer());
+            var schedule = ScheduleCreator.FromListOfTuples(list);
         }
     }
 }
