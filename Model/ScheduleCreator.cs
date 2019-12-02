@@ -49,12 +49,34 @@ namespace Model
             return secondStageSchedule;
         }
         
-        public static Tuple<List<TimeMark>, List<TimeMark>> FromJobList(List<Job> jobList)
+        private static Tuple<List<TimeMark>, List<TimeMark>> FromJobList(List<Job> jobList)
         {
             var firstStageSchedule = ScheduleFirstStage(jobList);
             var secondStageSchedule = ScheduleSecondStage(jobList, firstStageSchedule);
 
             return new Tuple<List<TimeMark>, List<TimeMark>>(firstStageSchedule, secondStageSchedule);
+        }
+
+        private static List<Job> FromTuplesToJobList(List<Tuple<int, int>> jobLengths)
+        {
+            Job.ResetNames();
+            var jobList = new List<Job>();
+            foreach (var tuple in jobLengths)
+            {
+                jobList.Add(new Job(tuple.Item1, tuple.Item2));
+            }
+
+            jobList.Sort(new JobComparer());
+            return jobList;
+        }
+        
+        public static Tuple<List<TimeMark>, List<TimeMark>> FromListOfTuples(List<Tuple<int, int>> jobLengths)
+        {
+            var jobList = FromTuplesToJobList(jobLengths);
+
+            var schedule = FromJobList(jobList);
+
+            return schedule;
         }
     }
 }
