@@ -24,7 +24,15 @@ namespace Model
                 namer++;
             }
         }
-        
-        
+
+        static void ResetNames()
+        {
+            namer = 'A';
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
