@@ -15,8 +15,6 @@ namespace Model
             list.Add(new Tuple<int, int>(2, 3));
             list.Add(new Tuple<int, int>(6, 5));
             list.Add(new Tuple<int, int>(5, 4));
-
-            
             var schedule = ScheduleCreator.FromListOfTuples(list);
         }
     }

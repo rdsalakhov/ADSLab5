@@ -21,7 +21,7 @@ namespace Model
         private static List<TimeMark> ScheduleSecondStage(List<Job> jobList, List<TimeMark> firstStageSchedule)
         {
             var secondStageSchedule = new List<TimeMark>();
-            secondStageSchedule.Add(new TimeMark("Chill time", jobList[0].FirstStage));
+            secondStageSchedule.Add(new TimeMark("#", jobList[0].FirstStage));
             int currentTime = jobList[0].FirstStage + jobList[0].SecondStage;
             secondStageSchedule.Add(new TimeMark(jobList[0].Name, currentTime));
             
@@ -34,7 +34,7 @@ namespace Model
                     {
                         ready = false;
                         currentTime = firstStageSchedule[j].FinishTime;
-                        secondStageSchedule.Add(new TimeMark("Chill time", currentTime));
+                        secondStageSchedule.Add(new TimeMark("#", currentTime));
                         i--;
                         break;
                     }
