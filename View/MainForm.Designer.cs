@@ -53,6 +53,8 @@
             // 
             this.jobsTable.AllowUserToAddRows = false;
             this.jobsTable.AllowUserToDeleteRows = false;
+            this.jobsTable.AllowUserToResizeColumns = false;
+            this.jobsTable.AllowUserToResizeRows = false;
             this.jobsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.jobsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.jobName,

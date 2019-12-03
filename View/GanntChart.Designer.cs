@@ -47,6 +47,8 @@
             // 
             this.ganntChartTable.AllowUserToAddRows = false;
             this.ganntChartTable.AllowUserToDeleteRows = false;
+            this.ganntChartTable.AllowUserToResizeColumns = false;
+            this.ganntChartTable.AllowUserToResizeRows = false;
             this.ganntChartTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ganntChartTable.Location = new System.Drawing.Point(99, 160);
             this.ganntChartTable.Name = "ganntChartTable";
